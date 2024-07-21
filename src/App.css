@@ -1,51 +1,382 @@
-.header-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
-  width: calc(100% - 40px);
-  gap: 32px;
+#root {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 100px 2100px 500px;
+  grid-gap: 10px;
+  margin: 0;
 }
 
-.nav-items {
-  display: flex;
-  justify-content: center;
+.header-nav {
+  display: grid;
+  grid-template-columns: 3fr 9fr;
   align-items: center;
-  gap: 32px;
-  list-style-type: none;
+  justify-content: center;
+  margin: 20px 10%;
+  width: 80%;
+  gap: 30%;
+  grid-column: span 12;
 }
 
 header {
-  width: 40%;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+}
+
+#header-logo {
+  width: 100%;
 }
 
 nav {
-  width: 60%;
+  width: 100%;
   font-weight: bold;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+}
+
+.nav-items {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr 2fr 1fr;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav>ul>li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 nav>ul>li>a,
-nav>ul>li>a:visited {
+nav>ul>li>a:visited,
+footer a,
+footer a:visited {
   text-decoration: none;
   color: black;
 }
 
-#header-logo {
-  width: 20%;
+main {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 400px 700px 500px 500px;
 }
 
-main {
+.intro {
   background-color: #495E57;
   color: #FFFFFF;
+  margin: 1%;
+  width: 58%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10%;
+  padding: 0 20%;
+  grid-column: span 12;
+}
+
+.intro-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro h1 {
+  color: #F4CE14;
+}
+
+.yellow-button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #F4CE14;
   font-weight: bold;
+  font-family: system-ui;
+  cursor: pointer;
+  width: 35%;
+}
+
+.intro-right {
+  width: 50%;
+  height: 100%;
+}
+
+.intro-image {
+  width: 100%;
+  height: 110%;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-top: 5%;
+}
+
+.menu-section {
+  grid-column: span 12;
+  margin: 100px 21%;
+}
+
+.menu-section-left {
+  width: 50%;
+}
+
+.menu-section-right {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu-section-h1-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-section h1 {
+  margin: 0;
+}
+
+.menu-section-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.menu-card {
+  background-color: #EDEFEE;
+  border-radius: 10px;
+  width: calc(100% / 3);
+  height: 400px;
+  position: relative;
+}
+
+.menu-card-img {
+  width: 100%;
+  height: 40%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.menu-card-name-price {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px;
+  font-weight: bold;
+}
+
+.menu-card-name-price h4,
+.menu-card-name-price p {
+  margin: 0;
+}
+
+.menu-card-price {
+  color: #EE9972;
+}
+
+.menu-card-description {
+  margin: 24px;
+  text-align: justify;
+}
+
+.menu-card-delivery {
+  display: flex;
+  align-items: center;
+  margin: 24px;
+  gap: 10px;
+  position: absolute;
+  bottom: 0;
+  font-weight: bold;
+}
+
+.menu-card-delivery-img {
+  width: 24px;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  grid-column: span 12;
+  margin: 0 1%;
+  width: 58%;
+  padding: 0 20%;
+  background-color: #495E57;
+}
+
+.testimonials h1 {
+  color: #F4CE14;
+}
+
+.testimonials-section-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  margin-top: 36px;
+  width: 100%;
+}
+
+.testimonials-card {
+  background-color: #EDEFEE;
+  border-radius: 10px;
+  width: calc(100% / 3);
+  height: 200px;
+  position: relative;
+  padding: 24px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.testimonials-card p {
+  margin: 0;
+}
+
+.testimonial-card-image-name {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.testimonial-card-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.intro2 {
+  background-color: #FFFFFF;
+  color: #000000;
+  margin: 100px 1%;
+}
+
+.intro2-left {
+  width: 40%;
+}
+
+.intro2-right {
+  width: 60%;
+  position: relative;
+}
+
+.intro2-image {
+  width: 60%;
+  height: 100%;
+  position: absolute;
+}
+
+.intro2-image1 {
+  top: 20%;
+  left: 0;
+}
+
+.intro2-image2 {
+  top: 0;
+  left: 40%;
 }
 
 footer {
   background-color: #F4CE14;
   color: #000000;
   font-weight: bold;
+  grid-column: span 12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 0 10%;
+  margin: 150px 1% 0 1%;
+  width: 78%;
+}
+
+.footer-image {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.footer-links-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-item {
+  width: 25%;
+}
+
+@media (max-width: 700px) {
+
+  nav>ul>li>a,
+  nav>ul>li>a:visited {
+    font-size: 0.5em;
+  }
+
+  .nav-items {
+    gap: 5%;
+  }
+
+  .header-nav {
+    margin: 20px 2%;
+    width: 96%;
+    gap: 5%;
+  }
+
+  .intro-left,
+  .intro-right {
+    width: 100%;
+  }
+
+  .intro,
+  .menu-section-h1-button,
+  .menu-section-cards,
+  .testimonials-section-cards,
+  footer {
+    flex-direction: column;
+  }
+
+  .footer-item {
+    width: 100%;
+  }
+
+  .menu-section-h1-button {
+    gap: 28px;
+  }
+
+  #root {
+    grid-template-rows: 50px 4650px 1100px;
+  }
+
+  main {
+    grid-template-rows: 700px 2000px 1300px 650px;
+  }
+
+  .yellow-button {
+    width: 100%;
+  }
+
+  .menu-card {
+    width: 100%;
+    height: 500px;
+  }
+
+  .testimonials-card {
+    width: 100%;
+  }
+
+  .intro-image {
+    height: 90%;
+  }
 }
