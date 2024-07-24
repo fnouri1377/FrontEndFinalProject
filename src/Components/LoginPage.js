@@ -9,7 +9,7 @@ function LoginPage() {
                 <Header />
                 <Nav />
             </div>
-            <div>
+            <div className="empty-page-content">
                 <h1>Login Page for Little Lemon Restaurant</h1>
             </div>
         </>

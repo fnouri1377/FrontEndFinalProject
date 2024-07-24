@@ -2,7 +2,7 @@ import '../App.css';
 import { Link } from 'react-router-dom';
 import Restaurant from '../Icon Assets/restaurant.jpg';
 
-function Footer() {
+function Footer(props) {
     return (
         <footer>
             <div className="footer-item">

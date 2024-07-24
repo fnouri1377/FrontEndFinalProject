@@ -14,6 +14,8 @@ import Sarah from './Icon Assets/Sarah.avif';
 import Isla from './Icon Assets/Isla.jpg';
 import John from './Icon Assets/John.avif';
 import Maggie from './Icon Assets/Maggie.jpg';
+import { useReducer } from 'react';
+import ConfirmedBooking from './Components/ConfirmedBooking';
 
 const menuItems = [
   {
@@ -63,20 +65,75 @@ const testimonialsItems = [
   }
 ];
 
-function App() {
+const seededRandom = function (seed) {
+  var m = 2 ** 35 - 31;
+  var a = 185852;
+  var s = seed % m;
+  return function () {
+    return (s = s * a % m) / m;
+  };
+}
+
+export const fetchAPI = function (date) {
+  let result = [];
+  let random = seededRandom(date.getDate());
+
+  for (let i = 17; i <= 23; i++) {
+    if (random() < 0.5) {
+      result.push(i + ':00');
+    }
+    if (random() < 0.5) {
+      result.push(i + ':30');
+    }
+  }
+  return result;
+};
+
+export const initializeTimes = () => {
+  return fetchAPI(new Date());
+};
+
+export const updateTimes = (state, action) => {
+  // console.log(action);
+  // if (new Date(action.date).getDay() === 0 || new Date(action.date).getDay() === 6) {
+  //   return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'];
+  // }
+  // else {
+  //   return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
+  // }
+
+  // return state;
+
+  return fetchAPI(new Date(action.date));
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'UPDATE_TIMES':
+      return updateTimes(state, action);
+    default:
+      return state;
+  }
+};
+
+export default function App() {
+
+  const [availableTimes, dispatch] = useReducer(reducer, [], initializeTimes);
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<HomePage menuItems={menuItems} testimonialsItems={testimonialsItems} />}></Route>
-        <Route path='/booking' element={<BookingPage />}></Route>
+        <Route path='/booking' element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} />}></Route>
         <Route path='/about' element={<AboutPage />}></Route>
         <Route path='/menu' element={<MenuPage />}></Route>
         <Route path='/reservations' element={<ReservationsPage />}></Route>
         <Route path='/order-online' element={<OrderOnlinePage />}></Route>
         <Route path='/login' element={<LoginPage />}></Route>
+        <Route path='/confirm-booking' element={<ConfirmedBooking />}></Route>
       </Routes>
     </BrowserRouter>
   );
 }
 
-export default App;
+// export default { App, initializeTimes };

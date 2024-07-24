@@ -6,14 +6,14 @@ import Footer from './Footer';
 
 function HomePage(props) {
     return (
-        <>
+        <div className="inner-root">
             <div className="header-nav">
                 <Header />
                 <Nav />
             </div>
             <Main menuItems={props.menuItems} testimonialsItems={props.testimonialsItems} />
             <Footer />
-        </>
+        </div>
     );
 }
 

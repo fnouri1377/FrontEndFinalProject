@@ -9,7 +9,7 @@ function OrderOnlinePage() {
                 <Header />
                 <Nav />
             </div>
-            <div>
+            <div className="empty-page-content">
                 <h1>Order Online Page for Little Lemon Restaurant</h1>
             </div>
         </>

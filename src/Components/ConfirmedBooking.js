@@ -2,7 +2,7 @@ import '../App.css';
 import Header from './Header';
 import Nav from './Nav';
 
-function MenuPage() {
+function ConfirmedBooking() {
     return (
         <>
             <div className="header-nav">
@@ -10,10 +10,10 @@ function MenuPage() {
                 <Nav />
             </div>
             <div className="empty-page-content">
-                <h1>Little Lemon Restaurant Menu</h1>
+                <h1>Your reservation has submitted successfully.</h1>
             </div>
         </>
     );
 }
 
-export default MenuPage;
+export default ConfirmedBooking;

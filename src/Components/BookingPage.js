@@ -1,8 +1,9 @@
 import '../App.css';
 import Header from './Header';
 import Nav from './Nav';
+import BookingForm from './BookingForm';
 
-function BookingPage() {
+function BookingPage({ availableTimes, dispatch }) {
     return (
         <>
             <div className="header-nav">
@@ -10,7 +11,7 @@ function BookingPage() {
                 <Nav />
             </div>
             <div>
-                <h1>Booking Page for Little Lemon Restaurant</h1>
+                <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
             </div>
         </>
     );

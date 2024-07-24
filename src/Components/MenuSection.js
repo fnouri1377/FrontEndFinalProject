@@ -21,8 +21,8 @@ function MenuSection(props) {
             </div>
 
             <div className="menu-section-cards">
-                {props.menuItems.map(item => (
-                    <MenuCard item={item} />
+                {props.menuItems.map((item, index) => (
+                    <MenuCard item={item} key={index} />
                 ))}
             </div>
         </div >

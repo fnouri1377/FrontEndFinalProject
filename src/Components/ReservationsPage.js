@@ -9,7 +9,7 @@ function ReservationsPage() {
                 <Header />
                 <Nav />
             </div>
-            <div>
+            <div className="empty-page-content">
                 <h1>Your Reservations in Little Lemon Restaurant</h1>
             </div>
         </>

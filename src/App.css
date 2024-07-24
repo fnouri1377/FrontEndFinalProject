@@ -1,4 +1,4 @@
-#root {
+.inner-root {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 100px 2100px 500px;
@@ -317,6 +317,18 @@ footer {
   width: 25%;
 }
 
+.empty-page-content {
+  display: flex;
+  justify-content: center;
+  margin: 100px;
+}
+
+.reserve-form {
+  display: grid;
+  max-width: 200px;
+  gap: 20px;
+}
+
 @media (max-width: 700px) {
 
   nav>ul>li>a,
@@ -355,7 +367,7 @@ footer {
     gap: 28px;
   }
 
-  #root {
+  .inner-root {
     grid-template-rows: 50px 4650px 1100px;
   }
 
