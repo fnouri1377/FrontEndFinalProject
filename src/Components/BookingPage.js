@@ -10,9 +10,7 @@ function BookingPage({ availableTimes, dispatch }) {
                 <Header />
                 <Nav />
             </div>
-            <div>
-                <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
-            </div>
+            <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
         </>
     );
 }

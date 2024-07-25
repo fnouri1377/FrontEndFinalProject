@@ -324,9 +324,62 @@ footer {
 }
 
 .reserve-form {
-  display: grid;
-  max-width: 200px;
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 0 1%;
+  width: 98%;
+  background-color: #495E57;
+  padding: 40px 0;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-label {
+  font-weight: bold;
+  color: #F4CE14;
+}
+
+.form-input {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+}
+
+.reserve-button-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reserve-button {
+  border: none;
+  border-radius: 50px;
+  padding: 12px 32px;
+  font-weight: bold;
+  background-color: #F4CE14;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.reserve-button:hover {
+  background-color: #ebc300;
+}
+
+.empty-green-box {
+  background-color: #495E57;
+  height: 1000px;
 }
 
 @media (max-width: 700px) {

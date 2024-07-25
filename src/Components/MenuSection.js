@@ -16,7 +16,7 @@ function MenuSection(props) {
                     <h1 className="menu-section-h1">This weeks specials!</h1>
                 </div>
                 <div className="menu-section-right">
-                    <Button className="menu-section-button" onClick={goToMenuPage} buttonText="Online Menu" />
+                    <Button className="menu-section-button" onClick={goToMenuPage} buttonText="Online Menu" aria-label="Go To Restaurant Menu Page" />
                 </div>
             </div>
 

@@ -15,7 +15,7 @@ function Introduction() {
                 <h1 className='intro-h1'>Little Lemon</h1>
                 <h2>Chicago</h2>
                 <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-                <Button onClick={goToBookingPage} buttonText='Reserve a Table' />
+                <Button onClick={goToBookingPage} buttonText='Reserve a Table' aria-label="Go To Reservation Page" />
             </div>
             <div className='intro-right'>
                 <img className='intro-image' alt='Food' src={mainFood} />
